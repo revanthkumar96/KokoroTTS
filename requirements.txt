@@ -1,0 +1,28 @@
+# ----------------------------------------------------------------------------
+# KokoroTTS – UK Voice Blending Lab
+# Python 3.10 – 3.12 recommended (3.11 is the sweet spot)
+# Install with:  pip install -r requirements.txt
+# ----------------------------------------------------------------------------
+
+# --- Text-to-Speech (Kokoro) ---
+kokoro>=0.9.4            # Kokoro-82M TTS pipeline (KPipeline)
+torch>=2.2.0             # Tensor math + model backend (CPU build is fine)
+soundfile>=0.12.1        # Writing .wav files
+numpy>=1.26.0
+
+# --- Voice / model download from Hugging Face ---
+huggingface_hub>=0.24.0
+
+# --- LLM text generation (install BOTH or just the one you use) ---
+groq>=0.11.0             # Groq API client (Llama 3.x, etc.)
+google-genai>=0.3.0      # Google Gemini API client (new unified SDK)
+
+# --- Config / utilities ---
+python-dotenv>=1.0.1     # Loads API keys from a .env file
+tqdm>=4.66.0             # Progress bars for the batch loop
+
+# ----------------------------------------------------------------------------
+# SYSTEM DEPENDENCY (NOT a pip package): espeak-ng
+#   Kokoro needs espeak-ng for phoneme generation.
+#   See docs/02-setup.md for OS-specific install instructions.
+# ----------------------------------------------------------------------------
