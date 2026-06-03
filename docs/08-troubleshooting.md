@@ -75,7 +75,8 @@ Every common error we hit, what it means, and the fix. `Ctrl+F` your error messa
 
 **`404 model not found` / `model has been decommissioned`**
 - The model name changed. Update `GROQ_MODEL` or `GEMINI_MODEL` in `.env`. Current good
-  picks: Groq `llama-3.3-70b-versatile`; Gemini `gemini-2.5-flash` / `gemini-2.0-flash`.
+  picks: Groq `llama-3.3-70b-versatile`; Gemini `gemini-2.5-flash` / `gemini-2.5-flash-lite`
+  (Gemini 2.0 Flash was retired on 2026-06-01).
 
 **`429 Too Many Requests` / rate limited**
 - Free tiers have limits. Wait a bit, lower request frequency, or reduce `max_tries` in the

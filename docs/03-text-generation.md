@@ -29,7 +29,8 @@ GEMINI_MODEL=gemini-2.5-flash
 
 > ⚠️ Model names change over time. If a model is deprecated you'll get a 404/400 — check the
 > provider's model list and update `GROQ_MODEL` / `GEMINI_MODEL`. Good current picks:
-> Groq → `llama-3.3-70b-versatile`; Gemini → `gemini-2.5-flash` or `gemini-2.0-flash`.
+> Groq → `llama-3.3-70b-versatile`; Gemini → `gemini-2.5-flash` or `gemini-2.5-flash-lite`
+> (Gemini 2.0 Flash was retired on 2026-06-01, so it is no longer a valid pick).
 
 ---
 
@@ -55,6 +56,11 @@ Return ONLY the paragraph text.
 
 > 🎙️ The phrase "read aloud by a text-to-speech voice" + "clear punctuation" nudges the model
 > toward speakable prose with natural breathing gaps (commas/full stops = pauses in Kokoro).
+
+> 📝 Implementation note: `generate.py` ships a firmer, length-targeting variant of this prompt
+> (it asks for ~305 words and pushes for detail) plus a sentence-boundary trim in code, because
+> Groq's Llama tends to undershoot. Same intent — only the phrasing is stronger so it reliably
+> lands in 290–310 words.
 
 ---
 
